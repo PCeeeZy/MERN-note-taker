@@ -1,0 +1,28 @@
+{
+  "name": "mern-note-taker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:dev": "cd ./server && npm run dev",
+    "client:dev": "cd ./client && npm run start",
+    "dev": "concurrently \"npm run server: dev\" \"npm run client:dev\"",
+    "start": "cd ./client && npm run build && cd ./../server && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PCeeeZy/MERN-note-taker.git"
+  },
+  "keywords": [],
+  "author": "Paul Cwik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PCeeeZy/MERN-note-taker/issues"
+  },
+  "homepage": "https://github.com/PCeeeZy/MERN-note-taker#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1"
+  }
+}
