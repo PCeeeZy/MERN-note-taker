@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const db = require('./db/connection');
 
 const PORT = process.env.PORT || 3003;
 
@@ -14,4 +15,6 @@ if (process.env.PORT) {
 app.use(express.json());
 app.use(cookieParser());
 
-app.listen(PORT, () => console.log(`server started on port ${PORT}`))
+db.once('open', () => {
+    app.listen(PORT, () => console.log(`server started on port ${PORT}`));
+});
